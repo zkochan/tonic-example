@@ -8,6 +8,7 @@
   "files": [
     "index.js",
     "lib",
+    "bin",
     "tonic-example.js"
   ],
   "main": "index.js",
