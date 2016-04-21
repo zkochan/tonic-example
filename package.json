@@ -40,7 +40,7 @@
     "url": "https://github.com/zkochan/tonic-example/issues"
   },
   "homepage": "https://github.com/zkochan/tonic-example#readme",
-  "tonicExample": "tonic-example.js",
+  "tonicExampleFilename": "tonic-example.js",
   "dependencies": {
     "independent": "^0.1.1",
     "meow": "^3.7.0"
