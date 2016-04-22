@@ -21,7 +21,8 @@
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "postcoveralls": "rm -rf ./coverage",
     "md": "mos",
-    "prepublish": "node bin/index.js"
+    "prepublish": "node bin/index.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": {
     "type": "git",
@@ -48,7 +49,7 @@
   },
   "devDependencies": {
     "chai": "^3.4.1",
-    "cz-conventional-changelog": "^1.1.5",
+    "cz-conventional-changelog": "1.1.6",
     "eslint": "^2.8.0",
     "eslint-config-standard": "^5.1.0",
     "eslint-plugin-promise": "^1.1.0",
@@ -57,6 +58,7 @@
     "istanbul": "^0.4.2",
     "mocha": "^2.3.4",
     "mos": "^0.11.1",
+    "semantic-release": "^4.3.5",
     "validate-commit-msg": "^2.6.1"
   },
   "config": {
