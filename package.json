@@ -2,6 +2,9 @@
   "name": "tonic-example",
   "version": "0.0.0-placeholder",
   "description": "Tonic example generator",
+  "engines": {
+    "node": ">=4"
+  },
   "bin": {
     "tonic-example": "./bin/index.js"
   },
