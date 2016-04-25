@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "chai": "^3.4.1",
-    "cz-conventional-changelog": "1.1.6",
+    "cz-conventional-changelog": "1.1.5",
     "eslint": "^2.8.0",
     "eslint-config-standard": "^5.1.0",
     "eslint-plugin-promise": "^1.1.0",
