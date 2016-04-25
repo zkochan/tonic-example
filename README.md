@@ -57,16 +57,16 @@ In order to always have the latest example code on tonicdev, add the example gen
 ```json
 {
   "scripts": {
-    "prepublish": "topic-example"
+    "prepublish": "tonic-example"
   }
 }
 ```
 
-## Add `topic-example.js` to `.gitignore`
+## Add `tonic-example.js` to `.gitignore`
 
 It is recommended to add `tonic-example.js` to `.gitignore`. It is a generated file and there is no benefit from having it in git.
 
-## Add `topic-example.js` to your `files` array
+## Add `tonic-example.js` to your `files` array
 
 If you use the [files](https://docs.npmjs.com/files/package.json#files) property in your `package.json` then don't forget to add `tonic-example.js` to it. Otherwise it won't be published with your module.
 
