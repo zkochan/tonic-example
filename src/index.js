@@ -1,10 +1,7 @@
-'use strict'
-module.exports = tonicExample
+import fs from 'fs'
+import independent from 'independent'
 
-const fs = require('fs')
-const independent = require('independent')
-
-function tonicExample (opts) {
+export default function tonicExample (opts) {
   opts = opts || {}
   const exampleCode = fs.readFileSync(opts.rawExamplePath, 'utf8')
   independent({

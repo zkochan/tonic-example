@@ -81,6 +81,7 @@ If you use the [files](https://docs.npmjs.com/files/package.json#files) property
 <!--@dependencies({ shield: 'flat-square' })-->
 ## Dependencies [![Dependency status for master](https://img.shields.io/david/zkochan/tonic-example/master.svg?style=flat-square)](https://david-dm.org/zkochan/tonic-example/master)
 
+- [babel-runtime](https://github.com/babel/babel/blob/master/packages): babel selfContained runtime
 - [independent](https://github.com/zkochan/independent): Change relative requires to import actual modules
 - [meow](https://github.com/sindresorhus/meow): CLI app helper
 
@@ -89,6 +90,11 @@ If you use the [files](https://docs.npmjs.com/files/package.json#files) property
 <!--@devDependencies({ shield: 'flat-square' })-->
 ## Dev Dependencies [![devDependency status for master](https://img.shields.io/david/dev/zkochan/tonic-example/master.svg?style=flat-square)](https://david-dm.org/zkochan/tonic-example/master#info=devDependencies)
 
+- [babel-cli](https://github.com/babel/babel/blob/master/packages): Babel command line.
+- [babel-plugin-add-module-exports](https://github.com/59naga/babel-plugin-add-module-exports): Fix babel/babel#2212
+- [babel-plugin-transform-runtime](https://github.com/babel/babel/blob/master/packages): Externalise references to helpers and builtins, automatically polyfilling your code without polluting globals
+- [babel-preset-es2015](https://github.com/babel/babel/blob/master/packages): Babel preset for all es2015 plugins.
+- [babel-register](https://github.com/babel/babel/blob/master/packages): babel require hook
 - [chai](https://github.com/chaijs/chai): BDD/TDD assertion library for node.js and the browser. Test framework agnostic.
 - [cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog): Commitizen adapter following the conventional-changelog format.
 - [eslint](https://github.com/eslint/eslint): An AST-based pattern checker for JavaScript.

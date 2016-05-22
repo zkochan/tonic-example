@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 'use strict'
-const path = require('path')
-const meow = require('meow')
-const tonicExample = require('..')
-const cwd = process.cwd()
+var path = require('path')
+var meow = require('meow')
+var tonicExample = require('..')
+var cwd = process.cwd()
 
-const examplePath = meow().input[0] || './example.js'
+var examplePath = meow().input[0] || './example.js'
 
 tonicExample({
   rawExamplePath: path.resolve(cwd, examplePath),

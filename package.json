@@ -3,29 +3,34 @@
   "version": "0.0.0-placeholder",
   "description": "Tonic example generator",
   "engines": {
-    "node": ">=4"
+    "node": ">=0.10"
   },
   "bin": {
     "tonic-example": "./bin/index.js"
   },
   "files": [
     "index.js",
-    "lib",
-    "bin",
+    "src/",
+    "dist/",
+    "bin/",
     "tonic-example.js"
   ],
-  "main": "index.js",
+  "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "scripts": {
-    "test": "mocha && npm run lint && mos test",
-    "lint": "eslint lib/**/*.js index.js",
+    "test-es5": "mocha --compilers js:babel-register && npm run lint",
+    "test:md": "npm run transpile && mos test",
+    "test": "npm run test-es5 && npm run test:md",
+    "lint": "eslint src/**/*.js",
     "commit": "git-cz",
-    "coverage": "istanbul cover -x \"**/*.spec.js\" node_modules/mocha/bin/_mocha -- -R spec",
-    "precoveralls": "istanbul cover -x \"**/*.spec.js\" node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && npm i coveralls@2",
+    "coverage": "istanbul cover -x \"**/*.spec.js\" node_modules/mocha/bin/_mocha -- --compilers js:babel-register -R spec",
+    "precoveralls": "istanbul cover -x \"**/*.spec.js\" node_modules/mocha/bin/_mocha --report lcovonly -- --compilers js:babel-register -R spec && npm i coveralls@2",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "postcoveralls": "rm -rf ./coverage",
     "md": "mos",
-    "prepublish": "node bin/index.js",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "prepublish": "npm run transpile && node bin/index.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "transpile": "babel src --out-dir dist"
   },
   "repository": {
     "type": "git",
@@ -47,10 +52,16 @@
   "homepage": "https://github.com/zkochan/tonic-example#readme",
   "tonicExampleFilename": "tonic-example.js",
   "dependencies": {
-    "independent": "^0.1.1",
+    "babel-runtime": "^6.9.0",
+    "independent": "^0.2.0",
     "meow": "^3.7.0"
   },
   "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-register": "^6.9.0",
     "chai": "^3.4.1",
     "cz-conventional-changelog": "1.1.5",
     "eslint": "^2.8.0",
